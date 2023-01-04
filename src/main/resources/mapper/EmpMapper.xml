@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.advsearch.mapper.EmpMapper">
+
+    <!--    List<Emp> searchEmpByEnameAndSalary(@Param("ename") String ename, @Param("salary") int salary);-->
+    <select id="searchEmpByEnameAndSalary" resultType="Emp">
+        select * from `emp` where ename like "%"#{ename}"%" and `salary` &lt;= #{salary}
+    </select>
+
+    <!--     List<Emp> searchEmpBySalary(@Param("salary") int salary);-->
+    <select id="searchEmpBySalary" resultType="emp">
+        select * from emp where salary &lt;= #{salary}
+    </select>
+
+    <!--    List<Emp> searchEmpByEnameLike(@Param("ename") String ename);-->
+    <select id="searchEmpByEnameLike" resultType="emp">
+        select * from emp where ename like "%"#{ename}"%"
+    </select>
+
+<!--    List<Emp> searchEmp();-->
+    <select id="searchEmp" resultType="emp">
+        select * from emp
+    </select>
+
+</mapper>
