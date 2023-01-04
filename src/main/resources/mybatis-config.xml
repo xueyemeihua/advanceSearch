@@ -3,7 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
     <!--    引入数据源-->
 <!--    <properties resource=""/>-->
 
@@ -26,7 +25,8 @@
     </environments>
 
     <mappers>
-        <mapper resource="mapper/EmpMapper.xml"></mapper>
+<!--        <mapper resource="mapper/EmpMapper.xml"></mapper>-->
+        <package name="com.sky.advsearch.mapper"/>
     </mappers>
 
 </configuration>
